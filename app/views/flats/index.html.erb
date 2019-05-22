@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+  <p>Simple Airbnb</p>
+  <p><%= link_to "Add Flat", new_flat_path, class: "btn btn-dark" %></p>
+</nav>
+<div class="container">
+  <h1>All our Flats</h1>
+  <p>You searched for 9 flats we found 9 flats.</p>
+  <div  class="row justify-content-center">
+  <% @flats.each do |flat| %>
+          <div class="flat-card card col-4 " style="width: 18rem;">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.address %></p>
+          <p><i class="fas fa-user-friends"></i><%= flat.number_of_guests %> <i class="fas fa-euro-sign"></i><%= flat.price_per_night %></p>
+        </div>
+    <% end %>
+  </div>
+</div>
